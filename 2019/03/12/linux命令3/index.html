@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://wangmi01.github.io">
-  <title>Archives: 2019/3 | 太阳</title>
+  <title>linux命令--3 | 太阳</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="太阳">
-<meta property="og:url" content="http://wangmi01.github.io/archives/2019/03/index.html">
+  <meta name="description" content="更改别人的服务的配置时注意备份 文本编辑：1vi xxx.log">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux命令--3">
+<meta property="og:url" content="http://wangmi01.github.io/2019/03/12/linux命令3/index.html">
 <meta property="og:site_name" content="太阳">
+<meta property="og:description" content="更改别人的服务的配置时注意备份 文本编辑：1vi xxx.log">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://wangmi01.github.io/images/vi.png">
+<meta property="og:updated_time" content="2019-03-12T06:50:20.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="太阳">
+<meta name="twitter:title" content="linux命令--3">
+<meta name="twitter:description" content="更改别人的服务的配置时注意备份 文本编辑：1vi xxx.log">
+<meta name="twitter:image" content="http://wangmi01.github.io/images/vi.png">
   
     <link rel="alternative" href="/atom.xml" title="太阳" type="application/atom+xml">
   
@@ -164,147 +170,174 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-linux命令3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      linux命令--3
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/12/linux命令3/" class="archive-article-date">
+
+        
+        <a href="/2019/03/12/linux命令3/" class="archive-article-date">
   	<time datetime="2019-03-11T22:48:49.026Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/12/linux命令3/">linux命令--3</a>
-    </h1>
-  
+        
+      </header>
+    
 
-        <div class="article-info info-on-right">
-          
-          
+        <!-- 目录内容 -->
+        
+        <!-- 目录内容结束 -->
+   
 
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>更改别人的服务的配置时注意备份</p>
+<p>文本编辑：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi xxx.log</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><img src="/images/vi.png" alt></p>
+<p>命令行模式常见快捷键:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dd 删除当前行</span><br><span class="line">dG 删除光标以下的所有行</span><br><span class="line">ndd 删除光标以下的n行</span><br><span class="line">gg 跳转到第一行的第一个字母</span><br><span class="line">G  跳转到最后一行的第一个字母</span><br><span class="line">shift+$ 行尾</span><br></pre></td></tr></table></figure></p>
+<p>1.清空文件，重新开始编辑：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gg  dG    清空文件，重新开始编辑</span><br><span class="line">echo &quot;&quot; &gt; ruoze.log.1  伪清空 1字节的</span><br><span class="line">echo &apos;&apos; &gt; ruoze.log.1  伪清空 1字节的  </span><br><span class="line">shell判断文件是否清空 一般是根据字节大小来判断</span><br><span class="line"></span><br><span class="line">cat /dev/null &gt; ruoze.log.2  真正清空</span><br></pre></td></tr></table></figure></p>
+<p>2.追加写文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">G shift+$ i 朝右箭头按一次+回车 到新的一行</span><br></pre></td></tr></table></figure></p>
+<p>3.文件内容非常多<br>3.1 快速定位到error关键词<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">搜索: 尾行模式输入/error </span><br><span class="line">行号:  尾行模式输入set nu（显示行号）   set nonu（隐藏行号）</span><br></pre></td></tr></table></figure></p>
+<p>3.2已知错误，简单判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat 1.log |grep xxx   /    grep 1.log xxx：查看xxx这一行内容</span><br><span class="line">3.3 文件不大，日志内容上传到window/mac   用编辑器（EditPlus）查看</span><br></pre></td></tr></table></figure></p>
+<p>解读文件信息：<br>例：drwxr-xr-x. 3 root root  4096 Jan 19 20:42 1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">d rwxr-xr-x</span><br><span class="line">第一个: d文件夹   -文件   l连接</span><br><span class="line">r: 读 4</span><br><span class="line">w: 写 2</span><br><span class="line">x: 执行 shell脚本 1</span><br><span class="line">-: 0</span><br><span class="line"></span><br><span class="line">rwxr-xr-x   755</span><br><span class="line">rwxr--r--   744</span><br><span class="line">r--r--r--   444</span><br><span class="line">r-xrwxrw-   576</span><br><span class="line">rwxrw-rw-   766 </span><br><span class="line"></span><br><span class="line">rwxr-xr-x :三组</span><br><span class="line">  第一组: rwx 7 代表文件夹或文件所属的用户的权限: 读写执行</span><br><span class="line">  第二组: r-x 5 代表文件夹或文件所属的用户组的权限: 读执行</span><br><span class="line">  第三组: r-x 5 代表其他组的所有用户对这个文件或文件夹的权限: 读执行</span><br><span class="line"></span><br><span class="line">root root</span><br><span class="line">第三列:  所属的用户</span><br><span class="line">第四列:  所属的用户组</span><br><span class="line"></span><br><span class="line">第五列: 字节(文件)</span><br><span class="line">ll -h 只能文件大小</span><br><span class="line">du -sh 6 文件夹大小</span><br><span class="line">du -sh install.log.syslog 文件大小</span><br><span class="line"></span><br><span class="line">第六列: 文件时间</span><br><span class="line">Jan 19 20:42</span><br></pre></td></tr></table></figure></p>
+<p>赋予权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">chmod：用来修改某个目录或文件的访问权限</span><br><span class="line">chmod  777 /home/wm：文件夹路径/home/wm,修改文件权限为777 </span><br><span class="line">chmod -R 777 /home/wm  修改文件夹及子文件夹权限为777</span><br><span class="line"></span><br><span class="line">chown：用来更改某个目录或文件的用户名和用户组</span><br><span class="line">chown 用户名:组名 文件路径：只修改该文件的属性（可以是绝对路径也可以是相对路径）</span><br><span class="line">chown -R  用户名:组名 文件路径：修改该文件及包含的所有文件（夹）属性</span><br></pre></td></tr></table></figure></p>
+<p>赋予一个x（执行）权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">文件名称xxx.sh </span><br><span class="line">第一行 #!/bin/bash </span><br><span class="line">sh xxx.sh 执行</span><br></pre></td></tr></table></figure></p>
+<p>软连接: 删除目标路径 原始路径不删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s 源文件 目标文件：为某一个文件在另外一个位置建立一个同不的链接</span><br></pre></td></tr></table></figure></p>
+<p>rz：上传、yum：下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sz：将选定的文件发送（send）到本地机器</span><br><span class="line">rz：运行该命令会弹出一个文件选择窗口，从本地选择文件上传到服务器</span><br><span class="line">yum install lrzsz</span><br><span class="line">rz window ==&gt;linux</span><br><span class="line">sz  linux ==&gt;  window</span><br></pre></td></tr></table></figure></p>
+<p>系统命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">top </span><br><span class="line">load average: 0.00, 0.00, 0.00</span><br><span class="line">生产服务器 不要超过10 经验值</span><br><span class="line">ps -ef|grep pid</span><br></pre></td></tr></table></figure></p>
+<p>压缩zip 解压unzip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">zip -r xxx.zip ./*：压缩当前目录的内容为xxx.zip文件</span><br><span class="line">unzip xxx.zip：解压xxx.zip文件到当前目录</span><br><span class="line"></span><br><span class="line">tar -xzvf xxx.tar.gz   解压xxx.zip文件</span><br><span class="line">c ：创建新的档案文件</span><br><span class="line">x ：从 tar 包中把文件提取出来</span><br><span class="line">z ： 表示 tar 包是被 gzip 压缩过的，所以解压时需要用 gunzip 解压</span><br><span class="line">v ： 显示详细信息</span><br><span class="line">f xxx.tar.gz：指定被处理的文件是 xxx.tar.gz</span><br></pre></td></tr></table></figure></p>
+<p>下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://.../xxx.zip ：从网络下载一个文件并保存在当前目录 </span><br><span class="line">wget -O xxx.zip http://...：从网络下载一个文件并指定文件名为xxx.zip</span><br><span class="line">wget –limit-rate=300k http://.../xxx.zip：限速300k下载</span><br></pre></td></tr></table></figure></p>
+<p>调度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@hadoop001 ~]# crontab -e  编辑</span><br><span class="line">* * * * * /root/test.sh &gt;&gt; /root/test.log</span><br><span class="line">第1个: 分</span><br><span class="line">第2个: 小时</span><br><span class="line">第3个: 日</span><br><span class="line">第4个: 月</span><br><span class="line">第5个: 周</span><br><span class="line"></span><br><span class="line">*代表 每</span><br></pre></td></tr></table></figure></p>
+<p>后台执行命令 不交互</p>
+<p>输入一个命令但是不生效<br>1、 检查是否安装<br>2、 which查看是否配置环境变量<br>3、 输入alias查看是否起了别名</p>
+
+      
+
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/03/linux命令--2/" class="archive-article-date">
-  	<time datetime="2019-03-03T07:37:12.403Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/03/linux命令--2/">linux命令--2</a>
-    </h1>
-  
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wangmi01.github.io/2019/03/12/linux命令3/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/运维//" class="article-tag-list-link color3">运维</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
-</article>
+</div></article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/03/linux命令--1/" class="archive-article-date">
-  	<time datetime="2019-03-03T07:31:18.119Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/03/linux命令--2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux命令--2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/03/linux命令--1/">linux命令--1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/运维//" class="article-tag-list-link color3">运维</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+<script type="text/javascript">
+document.getElementsByClassName("toc-container tooltip-left")[0].style.display="none";
+</script>
+
+  
 
 
           </div>
@@ -328,8 +361,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
